@@ -131,8 +131,11 @@ jobs:
           node-version: 16
       - name: Compile GH action
         run: |
+          node --version
+          npm --version
           echo "** Installing and building common..."
           (cd common && npm install && npm run build)
+          (cd common && npm run tsc_version)
           echo "** Installing and building github-action..."
           (cd github-action/  && npm run build && npm run package)
 

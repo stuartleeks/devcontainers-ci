@@ -5,7 +5,8 @@
   "description": "common ",
   "scripts": {
     "build": "tsc --build",
-    "test": "jest"
+    "test": "jest",
+    "tsc_version": "tsc --version"
   },
   "dependencies": {
     "jsonc-parser": "^3.0.0"
