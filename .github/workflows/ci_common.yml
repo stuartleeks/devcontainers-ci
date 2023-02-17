@@ -137,7 +137,7 @@ jobs:
           (cd common && npm install && npm run build)
           (cd common && npm run tsc_version)
           echo "** Installing and building github-action..."
-          (cd github-action/  && npm run build && npm run package)
+          (cd github-action/ && npm install && npm run build && npm run package)
 
       - name: Build in dev container
         uses: ./
