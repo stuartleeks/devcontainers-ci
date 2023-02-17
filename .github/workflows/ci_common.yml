@@ -124,6 +124,16 @@ jobs:
             core.error('Failed to set image_tag');
             console.log(context);
 
+
+      # Published action contains compiled JS, but we need to compile it here
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Compile GH action
+        run: |
+          (cd common && npm install)
+          (cd github-action && npm install && npm run build)
+
       - name: Build in dev container
         uses: ./
         id: build
@@ -301,6 +311,15 @@ jobs:
           asset_name: devcontainers.ci-${{ needs.build.outputs.version }}.vsix
           asset_content_type: application/zip
 
+      # Published action contains compiled JS, but we need to compile it here
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Compile GH action
+        run: |
+          (cd common && npm install)
+          (cd github-action && npm install && npm run build)
+
       - name: Publish AzDO Task
         uses: ./
         env:
@@ -379,6 +398,15 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      # Published action contains compiled JS, but we need to compile it here
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Compile GH action
+        run: |
+          (cd common && npm install)
+          (cd github-action && npm install && npm run build)
+
       - name: Run AzDO test pipeline
         uses: ./
         env:
@@ -423,6 +451,15 @@ jobs:
           # then the default checkout will apply
           ref: ${{ inputs.prRef }}
 
+      # Published action contains compiled JS, but we need to compile it here
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Compile GH action
+        run: |
+          (cd common && npm install)
+          (cd github-action && npm install && npm run build)
+
       - name: Run test
         uses: ./
         id: simpletest
@@ -463,6 +500,15 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      # Published action contains compiled JS, but we need to compile it here
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Compile GH action
+        run: |
+          (cd common && npm install)
+          (cd github-action && npm install && npm run build)
+
       - name: Run test
         uses: ./
         with:
@@ -498,6 +544,15 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Published action contains compiled JS, but we need to compile it here
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Compile GH action
+        run: |
+          (cd common && npm install)
+          (cd github-action && npm install && npm run build)
 
       - name: Run test
         uses: ./
@@ -535,6 +590,15 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      # Published action contains compiled JS, but we need to compile it here
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Compile GH action
+        run: |
+          (cd common && npm install)
+          (cd github-action && npm install && npm run build)
+
       - name: Run test
         uses: ./
         with:
@@ -570,6 +634,15 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Published action contains compiled JS, but we need to compile it here
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Compile GH action
+        run: |
+          (cd common && npm install)
+          (cd github-action && npm install && npm run build)
 
       - name: Run test
         uses: ./
@@ -607,6 +680,15 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      # Published action contains compiled JS, but we need to compile it here
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Compile GH action
+        run: |
+          (cd common && npm install)
+          (cd github-action && npm install && npm run build)
+
       - name: Run test
         uses: ./
         with:
@@ -643,6 +725,15 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      # Published action contains compiled JS, but we need to compile it here
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Compile GH action
+        run: |
+          (cd common && npm install)
+          (cd github-action && npm install && npm run build)
+
       - name: Run test
         uses: ./
         with:
@@ -678,6 +769,15 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Published action contains compiled JS, but we need to compile it here
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Compile GH action
+        run: |
+          (cd common && npm install)
+          (cd github-action && npm install && npm run build)
 
       - name: Run test
         uses: ./
@@ -723,6 +823,15 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      # Published action contains compiled JS, but we need to compile it here
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Compile GH action
+        run: |
+          (cd common && npm install)
+          (cd github-action && npm install && npm run build)
+
       - name: Run test
         uses: ./
         with:
@@ -747,6 +856,15 @@ jobs:
           # if the following value is missing (i.e. not triggered via comment workflow)
           # then the default checkout will apply
           ref: ${{ inputs.prRef }}
+
+      # Published action contains compiled JS, but we need to compile it here
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Compile GH action
+        run: |
+          (cd common && npm install)
+          (cd github-action && npm install && npm run build)
 
       - name: Run test
         uses: ./
@@ -779,6 +897,15 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Published action contains compiled JS, but we need to compile it here
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Compile GH action
+        run: |
+          (cd common && npm install)
+          (cd github-action && npm install && npm run build)
 
       - name: Run test
         uses: ./
@@ -825,6 +952,15 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      # Published action contains compiled JS, but we need to compile it here
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Compile GH action
+        run: |
+          (cd common && npm install)
+          (cd github-action && npm install && npm run build)
+
       - name: Build and push with multiple tags and single platform
         uses: ./
         id: multiple-tags-single-platform
@@ -853,6 +989,15 @@ jobs:
           sudo apt-key add Release.key
           sudo apt-get update
           sudo apt-get install skopeo
+
+      # Published action contains compiled JS, but we need to compile it here
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Compile GH action
+        run: |
+          (cd common && npm install)
+          (cd github-action && npm install && npm run build)
 
       - name: Build and push with multiple tags and multiple platforms
         uses: ./
