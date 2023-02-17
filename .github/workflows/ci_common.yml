@@ -131,7 +131,7 @@ jobs:
           node-version: 16
       - name: Compile GH action
         run: |
-          (cd common && npm install)
+          (cd common && npm install && npm run build)
           (cd github-action && npm install && npm run build)
 
       - name: Build in dev container
@@ -317,7 +317,7 @@ jobs:
   #         node-version: 16
   #     - name: Compile GH action
   #       run: |
-  #         (cd common && npm install)
+  #         (cd common && npm install && npm run build)
   #         (cd github-action && npm install && npm run build)
 
   #     - name: Publish AzDO Task
@@ -404,7 +404,7 @@ jobs:
   #         node-version: 16
   #     - name: Compile GH action
   #       run: |
-  #         (cd common && npm install)
+  #         (cd common && npm install && npm run build)
   #         (cd github-action && npm install && npm run build)
 
   #     - name: Run AzDO test pipeline
@@ -457,7 +457,7 @@ jobs:
           node-version: 16
       - name: Compile GH action
         run: |
-          (cd common && npm install)
+          (cd common && npm install && npm run build)
           (cd github-action && npm install && npm run build)
 
       - name: Run test
@@ -506,7 +506,7 @@ jobs:
           node-version: 16
       - name: Compile GH action
         run: |
-          (cd common && npm install)
+          (cd common && npm install && npm run build)
           (cd github-action && npm install && npm run build)
 
       - name: Run test
@@ -551,7 +551,7 @@ jobs:
           node-version: 16
       - name: Compile GH action
         run: |
-          (cd common && npm install)
+          (cd common && npm install && npm run build)
           (cd github-action && npm install && npm run build)
 
       - name: Run test
@@ -596,7 +596,7 @@ jobs:
           node-version: 16
       - name: Compile GH action
         run: |
-          (cd common && npm install)
+          (cd common && npm install && npm run build)
           (cd github-action && npm install && npm run build)
 
       - name: Run test
@@ -641,7 +641,7 @@ jobs:
           node-version: 16
       - name: Compile GH action
         run: |
-          (cd common && npm install)
+          (cd common && npm install && npm run build)
           (cd github-action && npm install && npm run build)
 
       - name: Run test
@@ -686,7 +686,7 @@ jobs:
           node-version: 16
       - name: Compile GH action
         run: |
-          (cd common && npm install)
+          (cd common && npm install && npm run build)
           (cd github-action && npm install && npm run build)
 
       - name: Run test
@@ -731,7 +731,7 @@ jobs:
           node-version: 16
       - name: Compile GH action
         run: |
-          (cd common && npm install)
+          (cd common && npm install && npm run build)
           (cd github-action && npm install && npm run build)
 
       - name: Run test
@@ -776,7 +776,7 @@ jobs:
           node-version: 16
       - name: Compile GH action
         run: |
-          (cd common && npm install)
+          (cd common && npm install && npm run build)
           (cd github-action && npm install && npm run build)
 
       - name: Run test
@@ -829,7 +829,7 @@ jobs:
           node-version: 16
       - name: Compile GH action
         run: |
-          (cd common && npm install)
+          (cd common && npm install && npm run build)
           (cd github-action && npm install && npm run build)
 
       - name: Run test
@@ -863,7 +863,7 @@ jobs:
           node-version: 16
       - name: Compile GH action
         run: |
-          (cd common && npm install)
+          (cd common && npm install && npm run build)
           (cd github-action && npm install && npm run build)
 
       - name: Run test
@@ -904,7 +904,7 @@ jobs:
           node-version: 16
       - name: Compile GH action
         run: |
-          (cd common && npm install)
+          (cd common && npm install && npm run build)
           (cd github-action && npm install && npm run build)
 
       - name: Run test
@@ -958,7 +958,7 @@ jobs:
           node-version: 16
       - name: Compile GH action
         run: |
-          (cd common && npm install)
+          (cd common && npm install && npm run build)
           (cd github-action && npm install && npm run build)
 
       - name: Build and push with multiple tags and single platform
@@ -996,7 +996,7 @@ jobs:
           node-version: 16
       - name: Compile GH action
         run: |
-          (cd common && npm install)
+          (cd common && npm install && npm run build)
           (cd github-action && npm install && npm run build)
 
       - name: Build and push with multiple tags and multiple platforms

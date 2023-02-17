@@ -4,6 +4,7 @@
   "private": true,
   "description": "common ",
   "scripts": {
+    "build": "tsc --build",
     "test": "jest"
   },
   "dependencies": {
