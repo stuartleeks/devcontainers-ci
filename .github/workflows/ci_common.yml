@@ -320,7 +320,7 @@ jobs:
   #     - name: Compile GH action
   #       run: |
   #         (cd common && npm install && npm run build)
-  #         (cd github-action/  && npm run build && npm run  package)
+  #         (cd github-action/ && npm install && npm run build && npm run package)
 
   #     - name: Publish AzDO Task
   #       uses: ./
@@ -407,7 +407,7 @@ jobs:
   #     - name: Compile GH action
   #       run: |
   #         (cd common && npm install && npm run build)
-  #         (cd github-action/  && npm run build && npm run  package)
+  #         (cd github-action/ && npm install && npm run build && npm run package)
 
   #     - name: Run AzDO test pipeline
   #       uses: ./
@@ -460,7 +460,7 @@ jobs:
       - name: Compile GH action
         run: |
           (cd common && npm install && npm run build)
-          (cd github-action/  && npm run build && npm run  package)
+          (cd github-action/ && npm install && npm run build && npm run package)
 
       - name: Run test
         uses: ./
@@ -509,7 +509,7 @@ jobs:
       - name: Compile GH action
         run: |
           (cd common && npm install && npm run build)
-          (cd github-action/  && npm run build && npm run  package)
+          (cd github-action/ && npm install && npm run build && npm run package)
 
       - name: Run test
         uses: ./
@@ -554,7 +554,7 @@ jobs:
       - name: Compile GH action
         run: |
           (cd common && npm install && npm run build)
-          (cd github-action/  && npm run build && npm run  package)
+          (cd github-action/ && npm install && npm run build && npm run package)
 
       - name: Run test
         uses: ./
@@ -599,7 +599,7 @@ jobs:
       - name: Compile GH action
         run: |
           (cd common && npm install && npm run build)
-          (cd github-action/  && npm run build && npm run  package)
+          (cd github-action/ && npm install && npm run build && npm run package)
 
       - name: Run test
         uses: ./
@@ -644,7 +644,7 @@ jobs:
       - name: Compile GH action
         run: |
           (cd common && npm install && npm run build)
-          (cd github-action/  && npm run build && npm run  package)
+          (cd github-action/ && npm install && npm run build && npm run package)
 
       - name: Run test
         uses: ./
@@ -689,7 +689,7 @@ jobs:
       - name: Compile GH action
         run: |
           (cd common && npm install && npm run build)
-          (cd github-action/  && npm run build && npm run  package)
+          (cd github-action/ && npm install && npm run build && npm run package)
 
       - name: Run test
         uses: ./
@@ -734,7 +734,7 @@ jobs:
       - name: Compile GH action
         run: |
           (cd common && npm install && npm run build)
-          (cd github-action/  && npm run build && npm run  package)
+          (cd github-action/ && npm install && npm run build && npm run package)
 
       - name: Run test
         uses: ./
@@ -779,7 +779,7 @@ jobs:
       - name: Compile GH action
         run: |
           (cd common && npm install && npm run build)
-          (cd github-action/  && npm run build && npm run  package)
+          (cd github-action/ && npm install && npm run build && npm run package)
 
       - name: Run test
         uses: ./
@@ -832,7 +832,7 @@ jobs:
       - name: Compile GH action
         run: |
           (cd common && npm install && npm run build)
-          (cd github-action/  && npm run build && npm run  package)
+          (cd github-action/ && npm install && npm run build && npm run package)
 
       - name: Run test
         uses: ./
@@ -866,7 +866,7 @@ jobs:
       - name: Compile GH action
         run: |
           (cd common && npm install && npm run build)
-          (cd github-action/  && npm run build && npm run  package)
+          (cd github-action/ && npm install && npm run build && npm run package)
 
       - name: Run test
         uses: ./
@@ -907,7 +907,7 @@ jobs:
       - name: Compile GH action
         run: |
           (cd common && npm install && npm run build)
-          (cd github-action/  && npm run build && npm run  package)
+          (cd github-action/ && npm install && npm run build && npm run package)
 
       - name: Run test
         uses: ./
@@ -961,7 +961,7 @@ jobs:
       - name: Compile GH action
         run: |
           (cd common && npm install && npm run build)
-          (cd github-action/  && npm run build && npm run  package)
+          (cd github-action/ && npm install && npm run build && npm run package)
 
       - name: Build and push with multiple tags and single platform
         uses: ./
@@ -999,7 +999,7 @@ jobs:
       - name: Compile GH action
         run: |
           (cd common && npm install && npm run build)
-          (cd github-action/  && npm run build && npm run  package)
+          (cd github-action/ && npm install && npm run build && npm run package)
 
       - name: Build and push with multiple tags and multiple platforms
         uses: ./
