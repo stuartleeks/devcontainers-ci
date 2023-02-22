@@ -166,18 +166,7 @@ jobs:
     name: Mark PR checks as complete
     needs: # TODO - check what jobs need adding here
       - build
-      - test-azdo
-      - test-gh-run-args
-      - test-gh-build-args
-      - test-gh-dockerfile-context
-      - test-gh-feature-docker-from-docker
-      - test-gh-docker-from-docker-non-root
-      - test-gh-docker-from-docker-root
-      - test-gh-skip-user-update
-      - test-compose-features
-      - test-simple
-      - test-no-run
-      - test-platform-with-runcmd
+      - pr-succeeded
     runs-on: ubuntu-latest
     if: ${{ inputs.prHeadSha }}
     steps:
@@ -212,6 +201,7 @@ jobs:
       - test-simple
       - test-no-run
       - test-platform-with-runcmd
+      - test-multiple-tags-job2
     runs-on: ubuntu-latest
     steps:
       - name: Simple step
@@ -223,18 +213,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: 
       - build
-      - test-azdo
-      - test-gh-run-args
-      - test-gh-build-args
-      - test-gh-dockerfile-context
-      - test-gh-feature-docker-from-docker
-      - test-gh-docker-from-docker-non-root
-      - test-gh-docker-from-docker-root
-      - test-gh-skip-user-update
-      - test-compose-features
-      - test-simple
-      - test-no-run
-      - test-platform-with-runcmd
+      - pr-succeeded
     if: ${{ inputs.release == true }}
     env:
       VERSION: ${{ needs.build.outputs.version }}
