@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "description": "Action to simplify using Dev Containers (https://containers.dev) in GitHub workflows",
+  "main": "dist/index.js",
   "scripts": {
     "build-ncc": "cd github-action && ncc build --out ../dist"
   },
