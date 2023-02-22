@@ -297,6 +297,7 @@ function runMain() {
                 imageName: fullImageNameArray,
                 platform,
                 additionalCacheFroms: cacheFrom,
+                env: inputEnvsWithDefaults,
                 output: buildxOutput,
             };
             console.log('\n\n');
@@ -320,6 +321,7 @@ function runMain() {
                     workspaceFolder,
                     additionalCacheFroms: cacheFrom,
                     skipContainerUserIdUpdate,
+                    env: inputEnvsWithDefaults,
                 };
                 const upResult = yield dev_container_cli_1.devcontainer.up(upArgs, log);
                 if (upResult.outcome !== 'success') {
@@ -17097,10 +17099,12 @@ function runSpecCli(options) {
 }
 function devContainerBuild(args, log) {
     return __awaiter(this, void 0, void 0, function* () {
+        const remoteEnvArgs = getRemoteEnvArray(args.env);
         const commandArgs = [
             'build',
             '--workspace-folder',
             args.workspaceFolder,
+            ...remoteEnvArgs,
         ];
         if (args.imageName) {
             args.imageName.forEach(iName => commandArgs.push('--image-name', iName));
@@ -17126,10 +17130,12 @@ function devContainerBuild(args, log) {
 }
 function devContainerUp(args, log) {
     return __awaiter(this, void 0, void 0, function* () {
+        const remoteEnvArgs = getRemoteEnvArray(args.env);
         const commandArgs = [
             'up',
             '--workspace-folder',
             args.workspaceFolder,
+            ...remoteEnvArgs,
         ];
         if (args.additionalCacheFroms) {
             args.additionalCacheFroms.forEach(cacheFrom => commandArgs.push('--cache-from', cacheFrom));

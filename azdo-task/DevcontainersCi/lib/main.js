@@ -108,6 +108,7 @@ function runMain() {
                 imageName: fullImageNameArray,
                 platform,
                 additionalCacheFroms: cacheFrom,
+                env: inputEnvsWithDefaults,
                 output: buildxOutput,
             };
             console.log('\n\n');
@@ -131,6 +132,7 @@ function runMain() {
                     workspaceFolder,
                     additionalCacheFroms: cacheFrom,
                     skipContainerUserIdUpdate,
+                    env: inputEnvsWithDefaults,
                 };
                 const upResult = yield dev_container_cli_1.devcontainer.up(upArgs, log);
                 if (upResult.outcome !== 'success') {

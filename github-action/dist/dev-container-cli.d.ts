@@ -17,6 +17,7 @@ export interface DevContainerCliBuildArgs {
     imageName?: string[];
     platform?: string;
     additionalCacheFroms?: string[];
+    env?: string[];
     userDataFolder?: string;
     output?: string;
 }
@@ -30,6 +31,7 @@ export interface DevContainerCliUpArgs {
     workspaceFolder: string;
     additionalCacheFroms?: string[];
     skipContainerUserIdUpdate?: boolean;
+    env?: string[];
     userDataFolder?: string;
 }
 declare function devContainerUp(args: DevContainerCliUpArgs, log: (data: string) => void): Promise<DevContainerCliUpResult | DevContainerCliError>;
