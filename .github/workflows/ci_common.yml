@@ -167,7 +167,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
-          tag: ${{ steps.build.outputs.version }}
+          tag_name: ${{ steps.build.outputs.version }}
 
       # - uses: actions/upload-artifact@v3
       #   name: Create dev AzDO VSIX artifact
