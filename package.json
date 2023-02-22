@@ -3,28 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "description": "Action to simplify using Dev Containers (https://containers.dev) in GitHub workflows",
-  "main": "lib/main.js",
   "scripts": {
-    "tsc-version": "tsc --version",
-    "build": "tsc --build",
-    "build-ncc": "cd github-action && ncc build --out ../dist",
-    "format": "prettier --write **/*.ts",
-    "format-check": "prettier --check **/*.ts",
-    "lint": "eslint src/**/*.ts",
-    "lint-fix": "eslint --fix src/**/*.ts",
-    "package": "ncc build --source-map --license licenses.txt",
-    "test": "jest",
-    "all": "npm run tsc-version && npm run build && npm run format && npm run lint && npm run package #&& npm test"
+    "build-ncc": "cd github-action && ncc build --out ../dist"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/devcontainers/ci.git"
   },
-  "keywords": [
-    "actions",
-    "node",
-    "setup"
-  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
