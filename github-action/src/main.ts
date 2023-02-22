@@ -102,6 +102,7 @@ export async function runMain(): Promise<void> {
 				imageName: fullImageNameArray,
 				platform,
 				additionalCacheFroms: cacheFrom,
+				env: inputEnvsWithDefaults,
 				userDataFolder,
 				output: buildxOutput,
 			};
@@ -125,6 +126,7 @@ export async function runMain(): Promise<void> {
 					workspaceFolder,
 					additionalCacheFroms: cacheFrom,
 					skipContainerUserIdUpdate,
+					env: inputEnvsWithDefaults,
 					userDataFolder,
 				};
 				const result = await devcontainer.up(args, log);

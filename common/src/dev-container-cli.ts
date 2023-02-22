@@ -138,6 +138,7 @@ export interface DevContainerCliBuildArgs {
   imageName?: string[];
   platform?: string;
   additionalCacheFroms?: string[];
+  env?: string[];
   userDataFolder?: string;
   output?: string,
 }
@@ -145,10 +146,12 @@ async function devContainerBuild(
   args: DevContainerCliBuildArgs,
   log: (data: string) => void,
 ): Promise<DevContainerCliBuildResult | DevContainerCliError> {
+  const remoteEnvArgs = getRemoteEnvArray(args.env);
   const commandArgs: string[] = [
     'build',
     '--workspace-folder',
     args.workspaceFolder,
+    ...remoteEnvArgs,
   ];
   if (args.imageName) {
     args.imageName.forEach(iName => 
@@ -185,16 +188,19 @@ export interface DevContainerCliUpArgs {
   workspaceFolder: string;
   additionalCacheFroms?: string[];
   skipContainerUserIdUpdate?: boolean;
+  env?: string[];
   userDataFolder?: string;
 }
 async function devContainerUp(
   args: DevContainerCliUpArgs,
   log: (data: string) => void,
 ): Promise<DevContainerCliUpResult | DevContainerCliError> {
+  const remoteEnvArgs = getRemoteEnvArray(args.env);
   const commandArgs: string[] = [
     'up',
     '--workspace-folder',
     args.workspaceFolder,
+    ...remoteEnvArgs,
   ];
   if (args.additionalCacheFroms) {
     args.additionalCacheFroms.forEach(cacheFrom =>
