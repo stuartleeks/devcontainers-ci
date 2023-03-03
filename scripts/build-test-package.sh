@@ -9,8 +9,10 @@ figlet env
 printenv | sort
 echo "---"
 echo "GITHUB_OUTPUT: $GITHUB_OUTPUT"
-ls "$GITHUB_OUTPUT"
-cat "$GITHUB_OUTPUT"
+if [[ -n "$GITHUB_OUTPUT" ]]; then
+    ls "$GITHUB_OUTPUT"
+    cat "$GITHUB_OUTPUT"
+fi
 
 
 
