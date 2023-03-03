@@ -5,6 +5,15 @@ script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 sudo chown -R $(whoami) ~ # TODO - remove this
 
+figlet env
+printenv | sort
+echo "---"
+echo "GITHUB_OUTPUT: $GITHUB_OUTPUT"
+ls "$GITHUB_OUTPUT"
+cat "$GITHUB_OUTPUT"
+
+
+
 figlet common
 cd "$script_dir/../common"
 npm install
